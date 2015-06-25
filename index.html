@@ -2,15 +2,15 @@
 <html>
 <head>
 	<title></title>
-	<script type="text/javascript">
-		function processData(event) {
-    		document.getElementById("price").appendChild(document.createTextNode(event.data));
-		}
-		window.addEventListener("message", processData, false);
-		window.parent.postMessage("READY", "*");
-	</script>
 </head>
 <body>
 <div id="price"></div>
+<script type="text/javascript">
+	function processData(event) {
+		document.getElementById("price").appendChild(document.createTextNode(event.data));
+	}
+	window.addEventListener("message", processData, false);
+	window.parent.postMessage("READY", "*");
+</script>
 </body>
 </html>
