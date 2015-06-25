@@ -7,10 +7,14 @@
 <div id="price"></div>
 <script type="text/javascript">
 	function processData(event) {
+		if (event.origin != "https://jsfiddle.net/") {
+			return;
+		};
+		
 		document.getElementById("price").appendChild(document.createTextNode(event.data));
 	}
 	window.addEventListener("message", processData, false);
-	window.parent.postMessage("READY", "*");
+	window.parent.postMessage("READY", "https://jsfiddle.net/");
 </script>
 </body>
 </html>
